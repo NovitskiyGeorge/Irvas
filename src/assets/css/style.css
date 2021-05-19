@@ -948,10 +948,6 @@ textarea:focus {
   display: inline-block;
 }
 
-.big_img > img {
-  margin: auto;
-}
-
 .do_image_more img {
   width: 110px;
   height: 70px;
