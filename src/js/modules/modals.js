@@ -47,6 +47,7 @@ const modals = () => {
 
    bindModal('.popup_engineer_btn', '.popup_engineer', '.popup_engineer .popup_close ');
    bindModal('.phone_link', '.popup', '.popup .popup_close ');
+   bindModal('.glazing_price_btn', '.popup_calc', '.popup_calc .popup_calc_close ');
    // showModalByTyme('.popup', 60000);
 };
 
