@@ -36,6 +36,30 @@ const forms = (state) => {
          e.preventDefault();
 
 
+         function closeModal() {
+            if (item.parentElement.parentElement.parentElement.parentElement.className === 'popup_calc_end') {
+               item.parentElement.parentElement.parentElement.parentElement.style.display = 'none';
+               document.body.style.overflow = '';
+            }
+         }
+
+
+         setTimeout(() => {
+            closeModal();
+         }, 1000);
+
+
+         function clearModalState() {
+            for (let name in state) {
+               delete state[name];
+            }
+         }
+
+         setTimeout(() => {
+            clearModalState();
+         }, 1000);
+
+
          let statusMessage = document.createElement('div');
          statusMessage.classList.add('status');
          item.appendChild(statusMessage);
@@ -49,7 +73,7 @@ const forms = (state) => {
 
          postData('assets/server.php', formData)
             .then(res => {
-               console.log(res);
+               // console.log(res);
                statusMessage.textContent = message.success;
             })
             .catch(() => statusMessage.textContent = message.failure)
@@ -61,6 +85,9 @@ const forms = (state) => {
             });
       })
    })
+
+
+
 };
 
 export default forms;
